@@ -3,9 +3,17 @@
 <p>apellido del empleado: {{apellido}}</p>
 
 
-<p>edad del empleado: {{edad+10}}</p>
+<p>edad del empleado: {{edad<19?"menor de edad":"Mayor de edad"}}</p>
 
 
-<p>empresa del empleado: {{empresa}}</p>
+<p>empresa del empleado: {{empresa.value}}</p>
 
-
+Introduce la empresa: <input type="text" #empresa (keyup)="0" [disabled]="habilitacionCuadro">
+<br />
+<br />
+<!-- <input type="button" value="sale loco" (click)="llamaEmpresa(empresa.value)"/> -->
+{{textodeRegistro}}
+<br>
+Registrado: <input type="radio" value="si" name="nRegistro" id="registro" [checked]="usuRegistrado" (click)="setusuarioRegistrado($event)"/>
+No Registrado<input type="radio" value="no" name="nRegistro" (click)="setusuarioRegistrado($event)"/>
+{{getRegistro()}}
