@@ -8,11 +8,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmpleadoService {
-  //Esta URL obtiene el listado de todos los empleados en el backend
-  private baseURL="http://localhost:8080/api/v1/empleados";
-
-  constructor(private httpClient:HttpClient) { }
+  private baseURL="http://localhost:8081/api/v1/empleados";
+  private agregarURL="http://localhost:8081/api/v1/agregar"
+  constructor(private httpClient:HttpClient,) { }
   obtenerListaEmpleados(): Observable<Empleado[]> {
     return this.httpClient.get<Empleado[]>(`${this.baseURL}`);
+  }
+  agregarEmpleado(empleado: any): Observable<any> {
+    return this.httpClient.post(this.agregarURL, empleado);
   }
 }
