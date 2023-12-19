@@ -1,26 +1,25 @@
-<form class="form-group row" (ngSubmit)="agregarEmpleado()">
+<form class="form-row" (ngSubmit)="agregarEmpleado()">
     <div class="form-group col-md-3">
-      <label for="nombre">Nombre:</label>
-      <input type="text" name="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="nuevoEmpleado.nombre">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="nuevoEmpleado.nombre">
     </div>
-    
+
     <div class="form-group col-md-3">
-      <label for="apellido">Apellido:</label>
-      <input type="text" name="apellido" placeholder="Apellido" class="form-control" [(ngModel)]="nuevoEmpleado.apellido">
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" placeholder="Apellido" class="form-control" [(ngModel)]="nuevoEmpleado.apellido">
     </div>
-    
+
     <div class="form-group col-md-3">
-      <label for="email">Email:</label>
-      <input type="text" name="email" placeholder="Email" class="form-control" [(ngModel)]="nuevoEmpleado.email">
+        <label for="email">Email:</label>
+        <input type="text" name="email" placeholder="Email" class="form-control" [(ngModel)]="nuevoEmpleado.email">
     </div>
-    
+
     <div class="form-group col-md-3">
-      <label for="edad">Edad:</label>
-      <input type="text" name="edad" placeholder="Edad" class="form-control" [(ngModel)]="nuevoEmpleado.edad">
+        <label for="edad">Edad:</label>
+        <input type="text" name="edad" placeholder="Edad" class="form-control" [(ngModel)]="nuevoEmpleado.edad">
     </div>
-    
-    <div class="col">
-      <button type="submit" class="btn btn-primary">Agregar</button>
+
+    <div class="form-group col-md-12 mt-3">
+        <button type="submit" class="btn btn-primary">Agregar</button>
     </div>
-  </form>
-  
+</form>

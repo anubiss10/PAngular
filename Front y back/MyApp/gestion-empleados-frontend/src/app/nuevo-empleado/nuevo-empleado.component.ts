@@ -1,7 +1,6 @@
-// nuevo-empleado.component.ts
 import { Component } from '@angular/core';
 import { EmpleadoService } from '../empleado.service';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-nuevo-empleado',
@@ -17,9 +16,13 @@ export class NuevoEmpleadoComponent {
     this.empleadoService.agregarEmpleado(this.nuevoEmpleado).subscribe(
       (response) => {
         console.log('Empleado agregado con éxito:', response);
+        alert('Empleado agregado correctamente');
+
       },
       (error) => {
         console.error('Error al agregar empleado:', error);
+            alert('Debes iniciar sesión para realizar esta acción');
+
       }
     );
   }

@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h2>Eliminar Empleado</h2>
+
+  <div class="mb-3">
+    <label for="empleadoId" class="form-label">ID del Empleado:</label>
+    <input type="number" id="empleadoId" class="form-control" [(ngModel)]="empleadoId">
+    <button class="btn btn-danger" (click)="borrarEmpleado()">Borrar Empleado</button>
+  </div>
+
+  <div *ngIf="empleados && empleados.length > 0">
+    <h3>Lista de Empleados</h3>
+    <ul class="list-group">
+      <li *ngFor="let empleado of empleados" class="list-group-item d-flex justify-content-between align-items-center">
+        {{ empleado.id }} - {{ empleado.nombre }} - {{empleado.apellido}} - {{empleado.email}}
+      </li>
+    </ul>
+  </div>
+</div>

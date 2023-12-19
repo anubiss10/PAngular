@@ -1,25 +1,23 @@
-<h2>Lista Empleados</h2>
+
+<h2 class="mb-4">Lista Empleados</h2>
+
 <table class="table table-striped">
-
-    <thead class="table table-dark">
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Edad</th>
-            </tr>
-
-
-    </thead>
-    <tbody>
-        <tr *ngFor="let empleado of empleados">
-        
-            <td>{{empleado.nombre}}</td>
-            <td>{{empleado.apellido}}</td>
-            <td>{{empleado.email}}</td>
-            <td>{{empleado.edad}}</td>
-        </tr>
-
-    </tbody>
-
+  <thead class="thead-dark">
+    <tr>
+      <th (click)="cambiarCampoOrden('id')">ID</th>
+      <th (click)="cambiarCampoOrden('nombre')">Nombre</th>
+      <th (click)="cambiarCampoOrden('apellido')">Apellido</th>
+      <th (click)="cambiarCampoOrden('email')">Email</th>
+      <th (click)="cambiarCampoOrden('edad')">Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{empleado.id}}</td>
+      <td>{{empleado.nombre}}</td>
+      <td>{{empleado.apellido}}</td>
+      <td>{{empleado.email}}</td>
+      <td>{{empleado.edad}}</td>
+    </tr>
+  </tbody>
 </table>

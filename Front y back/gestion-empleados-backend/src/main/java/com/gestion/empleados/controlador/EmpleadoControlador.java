@@ -5,9 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,11 +42,14 @@ public class EmpleadoControlador {
 	    }
 	}
 	@RestController
-	public class HelloWorldController {
-	
-		@RequestMapping("hello")
-		public String helloWorld(@RequestParam(value="name", defaultValue="World") String name) {
-			return "Hello "+name+"!!";
-		}
+@RequestMapping("/delete")
+public class EmpleadoController {
 
-	}}
+    @Autowired
+    private EmpleadoRepositorio empleadoRepository;
+
+    @DeleteMapping("/{id}")
+    public void borrarEmpleado(@PathVariable Long id) {
+        empleadoRepository.deleteById(id);
+    }}
+	}
